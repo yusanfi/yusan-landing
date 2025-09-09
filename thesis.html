@@ -111,9 +111,9 @@
     	<script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js" integrity="sha256-g6iAfvZp+nDQ2TdTR/VVKJf3bGro4ub5fvWSWVRi2NE=" crossorigin="anonymous"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/es5-shim/4.5.9/es5-shim.min.js" integrity="sha256-8E4Is26QH0bD52WoQpcB+R/tcWQtpzlCojrybUd7Mxo=" crossorigin="anonymous"></script>
     <![endif]-->
-  <script type="module" crossorigin src="/assets/thesis-tQcG0H2N.js"></script>
-  <link rel="modulepreload" crossorigin href="/assets/style-CCPF8zz8.js">
-  <link rel="stylesheet" crossorigin href="/assets/style-Df4CI_dt.css">
+  <script type="module" crossorigin src="/assets/thesis-G7ED-ex6.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/main-DCwY34gW.js">
+  <link rel="stylesheet" crossorigin href="/assets/main-Df4CI_dt.css">
 </head>
 
 <body>
@@ -216,3 +216,65 @@
 <li><a href="https://blog.chain.link/chainlink-smart-value-recapture-svr/" target="_blank" rel="noopener"><span>https://blog.chain.link/chainlink-smart-value-recapture-svr/</span></a></li>
 <li><a href="https://www.liquity.org/blog/liquity-v2-bold-stability-pool-opportunities" target="_blank" rel="noopener"><span>https://www.liquity.org/blog/liquity-v2-bold-stability-pool-opportunities</span></a></li>
 <li><a href="https://defillama.com/protocol/waterneuron" target="_blank" rel="noopener"><span>https://defillama.com/protocol/waterneuron</span></a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<script>
+    $(document).ready(function() {
+        var gotoline = $('.gotoLine');
+        var gotobottom = $('.gotoBottom');
+        gotoline.click(function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            if (scrollToTop)
+                scrollToTop();
+            removeHash();
+        });
+        gotobottom.click(function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            if (scrollToBottom)
+                scrollToBottom();
+            removeHash();
+        });
+
+        var toggle = $('.expand-toggle');
+        var tocExpand = false;
+
+        checkExpandToggle();
+        toggle.click(function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            tocExpand = !tocExpand;
+            checkExpandToggle();
+        })
+
+        function checkExpandToggle () {
+            var toc = $('.ui-toc-dropdown .toc');
+            var toggle = $('.expand-toggle');
+            if (!tocExpand) {
+                toc.removeClass('expand');
+                toggle.text('Expand all');
+            } else {
+                toc.addClass('expand');
+                toggle.text('Collapse all');
+            }
+        }
+
+        function scrollToTop() {
+            $('body, html').stop(true, true).animate({
+                scrollTop: 0
+            }, 100, "linear");
+        }
+
+        function scrollToBottom() {
+            $('body, html').stop(true, true).animate({
+                scrollTop: $(document.body)[0].scrollHeight
+            }, 100, "linear");
+        }
+    });
+</script>
+</body>
+</html>
